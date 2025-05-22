@@ -1,0 +1,64 @@
+/* Imposta il body come contenitore Flex per allineare tutto al centro */
+body {
+    display: flex;              /* Imposta Flexbox sul body */
+    justify-content: center;    /* Centra il contenuto orizzontalmente */
+    align-items: center;        /* Centra il contenuto verticalmente */
+    min-height: 100vh;          /* Assicurati che il contenitore abbia altezza piena della finestra */
+    margin: 0;                  /* Rimuovi margini di default */
+    background-color: #d2bbd3;  /* Colore di sfondo per migliorare la visibilità */
+}
+
+.title {
+    margin: 3%;
+}
+
+/* La container deve avere una larghezza definita, per evitare che si espanda oltre i limiti */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;   /* Centra il contenuto all'interno della container */
+    width: 100%;          /* Può essere anche una larghezza fissa, tipo 80% se preferisci */
+}
+
+/* Il resto del codice CSS rimane invariato */
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.key {
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    transition: transform 0.07s ease;
+    font-size: 1.5rem;
+    text-align: center;
+    background: #f1f1f1;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 80px; /* Imposta una larghezza fissa per i tasti */
+    height: 80px; /* Imposta un'altezza fissa per i tasti */
+    display: flex; /* Usa Flexbox per centrare il contenuto */
+    justify-content: center; /* Allinea il testo orizzontalmente */
+    align-items: center; /* Allinea il testo verticalmente */
+    overflow: hidden; /* Nasconde il testo che esce fuori */
+}
+
+.key .music {
+    display: block;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Se il tasto è attivo (stato 'playing'), ingrandisci il tasto */
+.key.playing {
+    transform: scale(1.1);
+    background-color: yellow;
+    box-shadow: 0 0 1rem gold;
+}
